@@ -1,0 +1,26 @@
+
+<h1>{{ title }}</h1>
+<table>
+  <tr>
+    <td>Cname</td>
+    <td>Cnumber</td>
+  </tr>
+  {{#each course}}
+    <form method="post">
+      <tr>
+        <td>{{Cname}}</td>
+        <td>{{Cnumber}}</td>
+        <td style="border: none; margin-left: 10px;">   {{!-- 버튼 위치&스타일 조정 --}}
+          <button 
+            style="margin-left: 10px;"
+            type="submit" 
+            name="delBtn"
+            value={{Cnumber}}           {{!-- submit 하먼 value값을 가져옴 --}}
+            formaction="/delete">       {{!-- 값을 submit했을 때 delete 페이지로 값을 넘겨줌 : localhost:3000/delte --}}
+          삭제
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+</table>
